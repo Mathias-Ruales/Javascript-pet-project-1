@@ -1,0 +1,24 @@
+{
+  "name": "javascript-pet-project-1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "logic.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mathias-Ruales/Javascript-pet-project-1.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Mathias-Ruales/Javascript-pet-project-1/issues"
+  },
+  "homepage": "https://github.com/Mathias-Ruales/Javascript-pet-project-1#readme",
+  "devDependencies": {
+    "jest": "^30.3.0"
+  }
+}
