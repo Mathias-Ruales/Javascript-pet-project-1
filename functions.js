@@ -24,8 +24,38 @@ function getTotalStars(repos) {
   return repos.reduce((total, repo) => total + repo.stargazers_count, 0);
 }
 
-module.exports = {
-  getReposMoreThanFive,
-  getLastUpdatedRepos,
-  getTotalStars,
-};
+function displayPopularRepos(allRepos) {
+  const popular = getReposMoreThanFive(allRepos);
+  const names = popular.map((repo) => repo.name).join(",\n");
+  document.getElementById("output-popular").innerText = `${names}`;
+}
+
+function displayRecentRepos(allRepos) {
+  const recent = getLastUpdatedRepos(allRepos);
+  const names = recent.map((repo) => repo.name).join(",\n");
+  document.getElementById("output-recent").innerText = `${names}`;
+}
+
+function displayTotalStars(allRepos) {
+  const total = getTotalStars(allRepos);
+  document.getElementById("output-total").innerText =
+    `Total Organization Stars: ${total}`;
+}
+
+fetchGithubData().then((allRepos) => {
+  if (allRepos.length === 0) return;
+
+  document
+    .getElementById("btn-popular")
+    .addEventListener("click", () => displayPopularRepos(allRepos));
+  document
+    .getElementById("btn-recent")
+    .addEventListener("click", () => displayRecentRepos(allRepos));
+  document
+    .getElementById("btn-total")
+    .addEventListener("click", () => displayTotalStars(allRepos));
+});
+
+if (typeof module !== "undefined") {
+  module.exports = { getReposMoreThanFive, getLastUpdatedRepos, getTotalStars };
+}
