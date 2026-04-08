@@ -1,12 +1,14 @@
 body {
   font-family: Arial, sans-serif;
-  margin: 25px;
-  background-color: #0056b3;
+  margin: 0px;
   justify-items: center;
+  height: 100vh;
 }
 header {
+  width: 100%;
+  background-color: #0056b3;
+  border: 1px solid #ddd;
   text-align: center;
-  margin: 30px 0;
 }
 
 h1 {
@@ -15,34 +17,44 @@ h1 {
 }
 
 main {
+  height: 90%;
+  background-color: #f0f0f0;
   display: flex;
-  flex-direction: column;
-  gap: 20px;
-  justify-items: center;
-  margin: 200px auto;
+  flex-direction: row;
+
+  gap: 30px;
+  justify-content: center;
+  align-items: center;
 }
 
 h2 {
-  color: white;
-  margin: 5px 0;
+  font-size: 3rem;
+  color: black;
+  margin-bottom: 20px;
 }
 
 output {
+  display: grid;
+  place-items: center;
   background-color: white;
   padding: 15px;
   border: 1px solid #ddd;
   border-radius: 5px;
-  width: 250px;
-  margin: 5px 5px;
+  width: 500px;
+  height: 400px;
   text-align: center;
 }
 
 #output-popular {
-  height: 200px;
+  font-size: 2rem;
 }
 
 #output-recent {
-  height: 90px;
+  font-size: 2.5rem;
+}
+
+#output-total {
+  font-size: 10rem;
 }
 
 section.buttons {
@@ -52,17 +64,17 @@ section.buttons {
 }
 
 section.outputs {
-  margin-bottom: 20px;
+  margin-bottom: 200px;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
 button {
-  padding: 10px 20px;
-  font-size: 16px;
+  padding: 20px 40px;
+  font-size: 1.5rem;
   cursor: pointer;
-  margin: 10px;
+  margin-top: 20px;
   background-color: #007bff;
   color: white;
   border: none;

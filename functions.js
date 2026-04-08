@@ -38,8 +38,7 @@ function displayRecentRepos(allRepos) {
 
 function displayTotalStars(allRepos) {
   const total = getTotalStars(allRepos);
-  document.getElementById("output-total").innerText =
-    `Total Organization Stars: ${total}`;
+  document.getElementById("output-total").innerText = `${total}`;
 }
 
 fetchGithubData().then((allRepos) => {
